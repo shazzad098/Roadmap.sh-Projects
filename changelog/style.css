@@ -1,0 +1,131 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.changelog-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #333;
+  margin: auto;
+}
+
+.changelog-container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.changelog-container p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 2rem;
+}
+
+.changelog-timeline {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 2rem;
+}
+
+.changelog-item {
+  position: relative;
+  padding: 5px 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.changelog-item:last-child {
+  margin-bottom: 0;
+}
+
+.changelog-date {
+  font-size: 0.9rem;
+  color: #bbb;
+  flex: 0 0 25%;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.changelog-content {
+  font-size: 1.1rem;
+  color: #333;
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.changelog-item::before,
+.changelog-item::after {
+  content: "";
+  position: absolute;
+  left: 27.5%;
+  transform: translateX(-50%);
+  background-color: #333;
+}
+
+.changelog-item::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.changelog-item::after {
+  top: -17px;
+  bottom: -20px;
+  width: 2px;
+  height: 120px;
+}
+
+.changelog-item:last-child::after {
+  display: none;
+}
+
+.changelog-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.changelog-button:hover {
+  background-color: #555;
+}
+
+@media (375px <= width <= 426px) {
+  .changelog-item::before,
+  .changelog-item::after {
+    left: 30%;
+  }
+
+  .changelog-item::after {
+    height: 150px;
+  }
+}
+
+@media (width <= 320px) {
+  .changelog-item::before,
+  .changelog-item::after {
+    left: 33%;
+  }
+
+  .changelog-item::after {
+    height: 170px;
+  }
+}
